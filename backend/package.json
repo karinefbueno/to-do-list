@@ -43,7 +43,7 @@
     "@swc/core": "^1.6.5",
     "@types/luxon": "^3.4.2",
     "@types/node": "^20.14.9",
-    "eslint": "^8.57.0",
+    "eslint": "8.56",
     "hot-hook": "^0.2.6",
     "pino-pretty": "^11.2.1",
     "prettier": "^3.3.2",
@@ -57,6 +57,7 @@
     "@adonisjs/lucid": "^21.1.0",
     "@vinejs/vine": "^2.1.0",
     "argon2": "^0.40.3",
+    "eslint-config-trybe-backend": "^2.1.0",
     "luxon": "^3.4.4",
     "mysql2": "^3.10.1",
     "reflect-metadata": "^0.2.2"
