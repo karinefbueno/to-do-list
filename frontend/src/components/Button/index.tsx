@@ -1,17 +1,14 @@
-import { ButtonComponent } from "./style";
+import React from 'react';
 
-type ButtonProp ={
-onclick?: ()=>void,
-text: string,
-}
+import { ButtonComponent } from './style';
 
+type ButtonProp = {
+	onclick?: () => void;
+	text: string;
+};
 
-function Button ({onclick, text}: ButtonProp){
-  return(
-    <ButtonComponent onClick={onclick}>
-      {text}
-    </ButtonComponent>
-  )
+function Button({ onclick, text }: ButtonProp) {
+	return <ButtonComponent onClick={onclick}>{text}</ButtonComponent>;
 }
 
 export default Button;

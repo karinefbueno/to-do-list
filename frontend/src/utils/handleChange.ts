@@ -1,11 +1,11 @@
-  
-  import React, { ChangeEvent } from "react";
+import React, { ChangeEvent } from 'react';
 
-  export const handleChange = <T,>(setState: React.Dispatch<React.SetStateAction<T>>) => 
-  (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setState(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+export const handleChange =
+	<T>(setState: React.Dispatch<React.SetStateAction<T>>) =>
+		(event: ChangeEvent<HTMLInputElement>) => {
+			const { name, value } = event.target;
+			setState((prevState) => ({
+				...prevState,
+				[name]: value,
+			}));
+		};
