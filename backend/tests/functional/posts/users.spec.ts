@@ -13,7 +13,7 @@ test.group('Posts create', (group) => {
     const userPayload = {
       name: 'Jo Souto',
       email: 'Jo.s@gmail.com',
-      password: 'k!oJ1235',
+      password: 'k!oJ1235'
     }
 
     type BodyType = {
@@ -38,4 +38,7 @@ test.group('Posts create', (group) => {
   })
 })
 
-// test('It should 409 when email is already in use', async ({ client, assert }) => {})
+// test('It should 409 when email is already in use', async({client, assert})=>{
+
+
+})

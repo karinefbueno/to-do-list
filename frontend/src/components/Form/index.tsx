@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import context from '../../context/context';
 import { handleChange } from '../../utils/handleChange';
 import { validateFormData } from '../../utils/validateForm';
 import { ContainerForm, ContainerInput, FormComponent, Input, MessageError } from './style';
@@ -20,7 +20,9 @@ const INITIAL_VALUE = {
 };
 
 const Form: React.FC<FormProps> = ({ input, buttonLogin, button, onSubmit }) => {
-	const [formData, setFormData] = useState(INITIAL_VALUE);
+	// const [formData, setFormData] = useState(INITIAL_VALUE);
+	const { formData, setFormData } = useContext(context);
+
 	const [emailError, setEmailError] = useState('');
 	const [passwordError, setPasswordError] = useState('');
 	const navigate = useNavigate();
