@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { BodyType } from '../../types/types';
-// import { ReposProps } from '../types/types';
+import { NewEventType } from '../../types/types';
 
 type ContextType = {
 	setFormData: React.Dispatch<
@@ -12,6 +12,9 @@ type ContextType = {
 	>;
 	loading: boolean;
 	formData: BodyType;
+	setNewEvent: React.Dispatch<React.SetStateAction<NewEventType>>;
+	newEvent: NewEventType;
+	INICIAL: NewEventType;
 };
 
 const context = createContext({} as ContextType);
