@@ -2,14 +2,10 @@ version: "3.8"
 
 services:
   frontend:
-    #  especifica a pasta contendo um arquivo Dockerfile a partir do qual o Compose vai executar o comando docker build automaticamente.
     build: frontend/
-    # container reinicia sempre
     restart: always
-    # mapeamento de portas
     ports:
       - 3000:3000
-    # o front depende do back
     depends_on:
       - adonis_app
     volumes:
@@ -28,13 +24,11 @@ services:
       - .env
     volumes:
       - ./backend:/home/node/app
-      # Uncomment the below line if you developing on MacOS
-      #- /home/node/app/node_modules
     command: dumb-init node --inspect=0.0.0.0 ace serve --watch
 
   db:
     platform: linux/x86_64
-    image: mysql:8.0.23
+    image: mysql:8.0.33
     container_name: todo_db
     restart: always
     ports:
