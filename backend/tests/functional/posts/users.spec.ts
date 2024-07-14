@@ -2,6 +2,8 @@ import { ApiResponse } from '@japa/api-client'
 import { test } from '@japa/runner'
 // import testUtils from '@adonisjs/core/services/test_utils'
 import User from '#models/user'
+import UserService from '#services/user.service'
+import app from '@adonisjs/core/services/app'
 
 test.group('Posts create', (group) => {
   group.each.teardown(async () => {
@@ -13,7 +15,7 @@ test.group('Posts create', (group) => {
     const userPayload = {
       name: 'Jo Souto',
       email: 'Jo.s@gmail.com',
-      password: 'k!oJ1235'
+      password: 'k!oJ1235',
     }
 
     type BodyType = {
@@ -38,7 +40,26 @@ test.group('Posts create', (group) => {
   })
 })
 
-// test('It should 409 when email is already in use', async({client, assert})=>{
+// test('It should 409 when email is already in use', async ({ client, assert }) => {
+//   class FakeService extends UserService {
+//     create() {
+//       return [
+//         {
+//           email: 'Jo.bueno@gmail.com',
+//           name: 'Joana',
+//           createdAt: '2024-07-11T13:30:58.564+00:00',
+//           updatedAt: '2024-07-11T13:30:58.565+00:00',
+//           id: 6,
+//         },
+//       ]
+//     }
+//   }
 
-
-})
+//   /**
+//    * Swap `UserService` with an instance of
+//    * `FakeService`
+//    */
+//   app.container.swap(UserService, () => {
+//     return new FakeService()
+//   })
+// })
