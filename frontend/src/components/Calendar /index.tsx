@@ -5,6 +5,7 @@ import { useContext, useState } from 'react';
 import Modal from '../Modal';
 import Button from '../Button';
 import context from '../../context/context';
+import { fetchCreateTask } from '../../service/api.task';
 
 const localizer = momentLocalizer(moment);
 
@@ -40,7 +41,7 @@ function CalendarComponent() {
 		}); // Fill all fields when an existing event is selected
 	};
 
-	const saveEvent = () => {
+	const saveEvent = async () => {
 		if (newEvent.title && selectedDate) {
 			if (selectEvent) {
 				const updatedEvent = {
@@ -49,8 +50,11 @@ function CalendarComponent() {
 					description: newEvent.description,
 					priority: newEvent.priority,
 				};
+
 				const updatedEvents = events.map((event) => (event === selectEvent ? updatedEvent : event));
 				setEvents(updatedEvents);
+				// await fetchCreateTask(events);
+				// console.log(data);
 			} else {
 				const newTask: Event = {
 					title: newEvent.title,

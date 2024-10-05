@@ -7,6 +7,7 @@
 |
 */
 // import type { HttpContext } from '@adonisjs/core/http'
+import TasksController from '#controllers/tasks_controller'
 import router from '@adonisjs/core/services/router'
 const UsersController = () => import('#controllers/users_controller')
 
@@ -21,3 +22,6 @@ router.delete('/users/:id', [UsersController, 'delete'])
 router.put('/users/:id', [UsersController, 'update'])
 router.get('users', [UsersController, 'getAll'])
 router.get('users/:id', [UsersController, 'getById'])
+
+router.post('/task', [TasksController, 'create'])
+router.delete('/task/:id', [TasksController, 'delete'])

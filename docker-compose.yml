@@ -19,7 +19,9 @@ services:
       target: dependencies
     ports:
       - ${PORT}:${PORT}
-      - 9229:9229
+      - 9229:9229 
+    depends_on:
+      - db    
     env_file:
       - .env
     volumes:
