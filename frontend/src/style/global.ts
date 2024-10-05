@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
      font-family: 'Cutive', serif;
     font-weight: 400; 
     font-style: normal; 
+
   }
 
   :focus {

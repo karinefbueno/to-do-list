@@ -1,5 +1,6 @@
 import Button from '../../components/Button/index.js';
 import Form from '../../components/Form/index.js';
+import { ContainerLogin, Title } from './style.ts';
 import { Input } from '../../components/Form/style.js';
 import { useState, useContext } from 'react';
 import { handleChange } from '../../utils/handleChange.js';
@@ -16,11 +17,14 @@ function Login() {
 	};
 
 	return (
-		<div>
-			<h1>To do List</h1>
+		<ContainerLogin>
+			<Title>To do List</Title>
 
 			{!showForm && (
-				<Form buttonLogin={<Button text='Login' />} button={<Button text='Criar nova conta' onclick={handleClick} />}></Form>
+				<Form
+					buttonLogin={<Button variant={'primary'} text='Login' />}
+					button={<Button variant={'primary'} text='Criar nova conta' onclick={handleClick} />}
+				></Form>
 			)}
 			{showForm && (
 				<Form
@@ -36,10 +40,10 @@ function Login() {
 							/>
 						</label>
 					}
-					button={<Button onclick={handleRegisterClick} text='Registrar' />}
+					button={<Button variant={'primary'} onclick={handleRegisterClick} text='Registrar' />}
 				></Form>
 			)}
-		</div>
+		</ContainerLogin>
 	);
 }
 
